@@ -18,6 +18,5 @@ jobs:
           install: true
           cache: true
           log_level: debug
-          reshim: false # [default: false] run `mise reshim -f`
-      - run: deno task build
+      - run: mise task ci
       - uses: docker/build-push-action@v5

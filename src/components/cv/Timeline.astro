@@ -1,5 +1,5 @@
 ---
-import { getCollection, getEntry, render } from "astro:content";
+import { getCollection } from "astro:content";
 import date from "dayjs";
 
 import Org from "@/components/cv/Org.astro";
@@ -29,17 +29,14 @@ const groupedByOrg = sortedWork.reduce(
     Work Experience
   </h2>
   {
-    Object.entries(groupedByOrg).map(async ([orgId, roles]) => {
-      const org = await getEntry("orgs", orgId);
-      return (
-        <section class="grid md:grid-cols-[15ch_auto] auto-rows-auto gap-x-[2ch]">
-          <Org id={orgId} />
+    Object.entries(groupedByOrg).map(async ([orgId, roles]) => (
+      <section class="grid md:grid-cols-[15ch_auto] auto-rows-auto gap-x-[2ch]">
+        <Org id={orgId} />
 
-          {roles.map((role) => (
-            <WorkExperience id={role.id} />
-          ))}
-        </section>
-      );
-    })
+        {roles.map((role) => (
+          <WorkExperience id={role.id} />
+        ))}
+      </section>
+    ))
   }
 </section>

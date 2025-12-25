@@ -53,17 +53,19 @@ const { rangeStr, durationStr } = formatDateRange(
       <div
         class="flex gap-[1ch] items-start justify-items-stretch mt-auto mb-5"
       >
-        <ul class="inline leading-4 text-zinc-300">
-          {
-            entry.data.stack.map((item) => (
-              <>
-                <li class="inline-flex font-mono px-1 text-[0.6rem] py-0.5">
-                  {item}
-                </li>
-              </>
-            ))
-          }
-        </ul>
+        {
+          entry.data.stack ? (
+            <ul class="inline leading-4 text-zinc-300">
+              {entry.data.stack.map((item) => (
+                <>
+                  <li class="inline-flex font-mono px-1 text-[0.6rem] py-0.5">
+                    {item}
+                  </li>
+                </>
+              ))}
+            </ul>
+          ) : null
+        }
       </div>
     </div>
   </div>

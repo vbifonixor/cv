@@ -1,5 +1,5 @@
 import { defineCollection, reference } from "astro:content";
-import { glob, file } from "astro/loaders";
+import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
 const orgs = defineCollection({
@@ -11,13 +11,16 @@ const orgs = defineCollection({
 });
 
 const workExperiences = defineCollection({
-  loader: glob({ pattern: ["[^_]*.mdx"], base: "./src/content/cv/experiences" }),
+  loader: glob({
+    pattern: ["[^_]*.mdx"],
+    base: "./src/content/cv/experiences",
+  }),
   schema: z.object({
     org: reference("orgs"),
     name: z.string(),
     dateStart: z.date(),
-    dateEnd: z.date().default(undefined),
-    stack: z.array(z.string()).default(undefined),
+    dateEnd: z.date().optional(),
+    stack: z.array(z.string()).optional(),
     location: z.string(),
     role: z.string(),
   }),

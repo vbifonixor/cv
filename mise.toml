@@ -1,2 +1,5 @@
 [tools]
 deno = "2.6.3"
+
+[tasks.ci]
+run = ["deno install", "deno task astro check", "deno task build"]
