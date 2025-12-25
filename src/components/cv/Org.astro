@@ -1,0 +1,39 @@
+---
+import { type CollectionEntry, render, getEntry } from "astro:content";
+
+import { ExternalLinkIcon } from "@lucide/astro";
+
+interface Props {
+  id: CollectionEntry<"orgs">["id"];
+}
+
+const org = await getEntry("orgs", Astro.props.id);
+
+const { Content: OrgContent } = org ? await render(org) : { Content: null };
+
+if (!org || !OrgContent) {
+  return null;
+}
+---
+
+<div
+  class="grid grid-cols-subgrid md:col-span-2 col-span-full border-zinc-200 border-t border-dashed"
+>
+  <div
+    class="border-l-2 border-zinc-100 h-full self-center place-self-start pt-3"
+  >
+  </div>
+  <div class="flex flex-col gap-1 pt-3">
+    <h3
+      class="text-sm uppercase decoration-1 decoration-blue-500/40 underline underline-offset-4 hover:text-blue-500 transition-colors"
+    >
+      <a href={org.data.link} class="flex gap-[1ch] items-center-safe">
+        {org.data.name}
+        <ExternalLinkIcon size={12} />
+      </a>
+    </h3>
+    <div class="text-xs prose text-zinc-400 -mt-1">
+      <OrgContent />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CVLayout from "../layouts/CVLayout.astro";
+import Header from "@/components/cv/Header.astro";
+import Bio from "@/components/cv/Bio.astro";
+import Contacts from "@/components/cv/Contacts.astro";
+import Timeline from "@/components/cv/Timeline.astro";
+import Education from "@/components/cv/Education.astro";
+import Skills from "@/components/cv/Skills.astro";
+import Languages from "@/components/cv/Languages.astro";
+---
+
+<Layout>
+  <CVLayout>
+    <Header />
+    <div
+      class="grid md:grid-cols-[1.25fr_auto] print:grid-cols-[1.25fr_auto] sm:auto-rows-auto p-8 print:py-4 border-b border-b-zinc-100 gap-4 sm:gap-8"
+    >
+      <Bio />
+      <Contacts />
+    </div>
+    <Timeline />
+    <div
+      class="grid md:grid-cols-[0.9fr_1.1fr] print:grid-cols-[0.9fr_1.1fr] sm:auto-rows-auto p-8 border-b border-b-zinc-100 gap-4 sm:gap-8"
+    >
+      <Skills />
+      <div class="flex flex-col gap-6">
+        <Education />
+        <Languages />
+      </div>
+    </div>
+  </CVLayout>
+</Layout>

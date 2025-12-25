@@ -1,0 +1,88 @@
+---
+import { type CollectionEntry, render, getEntry } from "astro:content";
+import { CalendarIcon, MapPinIcon } from "@lucide/astro";
+import { formatDateRange } from "@/utils/formatDateRange";
+
+interface Props {
+  id: CollectionEntry<"workExperiences">["id"];
+}
+
+const entry = await getEntry("workExperiences", Astro.props.id);
+
+const { Content: EntryContent } = entry
+  ? await render(entry)
+  : { Content: null };
+
+if (!entry || !EntryContent) {
+  return null;
+}
+
+const { rangeStr, durationStr } = formatDateRange(
+  entry.data.dateStart,
+  entry.data.dateEnd
+);
+---
+
+<article
+  class="grid md:grid-cols-subgrid md:col-span-2 grid-cols-subgrid col-span-full"
+>
+  <div
+    class="place-self-start text-xs flex row-start-2 md:row-auto md:border-b-0 border-b border-zinc-200 border-dashed items-start justify-start h-full gap-[2ch]"
+  >
+    <div class="border-l-2 border-zinc-100 h-full hidden md:block">
+      <div
+        class="w-2.5 h-2.5 rounded-full bg-amber-900/45 ml-[calc(--spacing(-1.25))] mt-3.5"
+      >
+      </div>
+    </div>
+    <div class="flex flex-col gap-[1ch] pt-3 h-full">
+      <div class="flex gap-[1ch] items-start justify-items-stretch">
+        <span class="text-zinc-400"><CalendarIcon size={12} /></span>
+        <span class="shrink basis-10/12 flex flex-col"
+          ><span>{rangeStr}</span><span class="text-zinc-400"
+            >{durationStr}</span
+          ></span
+        >
+      </div>
+      <div class="flex gap-[1ch] items-start justify-items-stretch">
+        <span class="text-zinc-400"><MapPinIcon size={12} /></span>
+        <span class="shrink basis-10/12 flex flex-col">
+          {entry.data.location}
+        </span>
+      </div>
+      <div
+        class="flex gap-[1ch] items-start justify-items-stretch mt-auto mb-5"
+      >
+        <ul class="inline leading-4 text-zinc-300">
+          {
+            entry.data.stack.map((item) => (
+              <>
+                <li class="inline-flex font-mono px-1 text-[0.6rem] py-0.5">
+                  {item}
+                </li>
+              </>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="py-3">
+    <h1
+      class="inline-flex gap-[1ch] text-base font-mono font-black items-center-safe"
+    >
+      <span
+        class="decoration-1 underline underline-offset-4 decoration-zinc-200 decoration-dashed text-amber-900"
+        >{entry.data.name}</span
+      >
+      <span class="border-l-2 border-zinc-200 pl-[1ch] font-normal decoration-0"
+        >{entry.data.role}</span
+      >
+    </h1>
+    <div
+      class="prose prose-sm prose-strong:font-mono prose-ul:pl-0 prose-li:pl-0"
+    >
+      <EntryContent />
+    </div>
+  </div>
+</article>

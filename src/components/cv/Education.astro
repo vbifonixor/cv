@@ -1,0 +1,25 @@
+---
+import EducationItem from "./EducationItem.astro";
+---
+
+<section class="border-b border-b-zinc-100 pb-5">
+  <div class="prose prose-sm prose-zinc prose-p:my-0 flex flex-col">
+    <h2>Education</h2>
+    <div class="flex flex-col gap-2">
+      <EducationItem
+        title="Frontend Engineering Intensive"
+        school="Yandex School of Interface Development (ShRI)"
+        yearStart={2017}
+        yearEnd={2017}
+        location="Moscow, Russia"
+      />
+      <EducationItem
+        title="Bachelor of Science in Applied Informatics (Computer Science in Economics)"
+        school="Plekhanov Russian University of Economics"
+        yearStart={2015}
+        yearEnd={2019}
+        location="Moscow, Russia"
+      />
+    </div>
+  </div>
+</section>

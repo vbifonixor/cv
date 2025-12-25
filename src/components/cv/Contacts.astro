@@ -1,0 +1,64 @@
+---
+import { getSecret } from "astro:env/server";
+import {
+  PhoneIcon,
+  AtSignIcon,
+  LinkedinIcon,
+  GithubIcon,
+  SendIcon,
+} from "@lucide/astro";
+import Contact from "./Contact.astro";
+
+const phone = getSecret("PHONE");
+const sanitizedPhone = phone?.replaceAll(/([^\d+])/g, "");
+const email = getSecret("EMAIL");
+const linkedInTag = getSecret("LINKED_IN");
+const githubTag = getSecret("GITHUB");
+const telegramTag = getSecret("TELEGRAM");
+---
+
+<section class="border-b-zinc-100 leading-loose prose prose-zinc">
+  <h2>Contacts</h2>
+  <ul class="not-prose leading-loose">
+    {
+      phone ? (
+        <Contact href={`tel:${sanitizedPhone}`}>
+          <PhoneIcon size={16} slot="icon" />
+          {phone}
+        </Contact>
+      ) : null
+    }
+    {
+      email ? (
+        <Contact href={`mailto:${email}`}>
+          <AtSignIcon size={16} slot="icon" />
+          {email}
+        </Contact>
+      ) : null
+    }
+    {
+      linkedInTag ? (
+        <Contact href={`https://linkedin.com/in/${linkedInTag}`}>
+          <LinkedinIcon size={16} slot="icon" />
+          {linkedInTag}
+        </Contact>
+      ) : null
+    }
+    {
+      githubTag ? (
+        <Contact href={`https://github.com/${githubTag}`}>
+          <GithubIcon size={16} slot="icon" />
+          {githubTag}
+        </Contact>
+      ) : null
+    }
+    {
+      telegramTag ? (
+        <Contact href={`https://t.me/${telegramTag}`}>
+          <SendIcon size={16} slot="icon" />
+          {telegramTag}
+        </Contact>
+      ) : null
+    }
+  </ul>
+</section>

@@ -1,0 +1,39 @@
+---
+import { formatDateRange } from "@/utils/formatDateRange";
+import { CalendarRangeIcon, MapPinIcon } from "@lucide/astro";
+
+interface Props {
+  location?: string;
+  yearStart: number;
+  yearEnd?: number;
+  title: string;
+  school: string;
+}
+
+const { title, school, yearStart, yearEnd, location } = Astro.props;
+---
+
+<article class="grid md:grid-cols-[auto_20ch] grid-cols-1 auto-rows-auto  gap-x-4">
+  <div class="">
+    <div class="font-bold">{title}</div>
+    <div>{school}</div>
+  </div>
+  <div class="text-xs text-zinc-400">
+    <div class="inline-flex gap-[1ch] items-center-safe">
+      <span class="basis-[14px]"><CalendarRangeIcon size={14} /></span>
+      {
+        formatDateRange(
+          new Date(yearStart.toString()),
+          yearEnd ? new Date(yearEnd?.toString()) : undefined,
+          true
+        ).rangeStr
+      }
+    </div>
+    <div class="">
+      <div class="inline-flex gap-[1ch] items-center-safe">
+        <span class="basis-[14px]"><MapPinIcon size={14} /></span>
+        {location}
+      </div>
+    </div>
+  </div>
+</article>

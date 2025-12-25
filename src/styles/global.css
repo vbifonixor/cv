@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@import "@fontsource-variable/ibm-plex-sans";
+@import "@fontsource-variable/jetbrains-mono";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "IBM Plex Sans Variable", sans-serif;
+  --font-mono: "JetBrains Mono Variable", sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  /* font-size: 14px; */
+
+  @media print {
+    font-size: 13px;
+  }
+
+  &::selection {
+    @apply text-zinc-700;
+    @apply bg-amber-200;
+  }
+}
+
+.prose {
+  @apply max-w-none;
+
+  :where(h1, h2, h3, h4) {
+    @apply font-black;
+    @apply font-mono;
+    @apply decoration-dashed;
+    @apply decoration-zinc-200;
+    @apply decoration-1;
+    @apply underline;
+    @apply underline-offset-8;
+  }
+
+  :where(h1) {
+    @apply text-lg;
+  }
+
+  :where(h2) {
+    @apply text-lg;
+    @apply mb-2;
+  }
+
+  :where(h3, h4) {
+    @apply mb-1;
+    @apply text-base;
+  }
+
+  :where(h3) {
+    @apply text-zinc-600;
+  }
+
+  :where(h4) {
+    @apply text-zinc-500;
+    @apply text-sm;
+  }
+
+  :where(p) {
+    @apply my-2;
+
+    & > svg {
+      display: inline-flex;
+    }
+  }
+}
