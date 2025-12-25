@@ -35,7 +35,13 @@ jobs:
           install: true
           cache: true
           log_level: debug
-      - run: mise run ci
+      - name: Build Astro
+        run: mise run ci
+        env:
+          EMAIL: ${{ secrets.EMAIL }}
+          LOCATION: ${{ secrets.LOCATION }}
+          LINKED_IN: ${{ secrets.LINKED_IN }}
+          GITHUB: ${{ secrets.GITHUB }}
       - name: Build and push container
         uses: docker/build-push-action@v5
         with:
