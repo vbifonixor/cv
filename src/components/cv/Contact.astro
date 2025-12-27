@@ -6,12 +6,12 @@ interface Props {
 const { href } = Astro.props;
 ---
 
-<li class="flex gap-[1ch] items-center-safe">
+<li class="flex items-center-safe gap-[1ch]">
   {
     href ? (
       <a
         href={href}
-        class="flex gap-[1ch] items-center-safe decoration-blue-600/40 hover:text-blue-500 transition-colors underline underline-offset-4"
+        class="flex items-center-safe gap-[1ch] underline decoration-blue-600/40 underline-offset-4 transition-colors hover:text-blue-500"
       >
         <slot name="icon" />
         <slot />

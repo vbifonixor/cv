@@ -8,7 +8,7 @@ date.extend(relativeTime);
 export const formatDateRange = (
   start: Date,
   end?: Date,
-  noMonths?: boolean
+  noMonths?: boolean,
 ) => {
   const s = date(start);
   const e = end ? date(end) : date();

@@ -8,7 +8,7 @@ import WorkExperience from "./WorkExperience.astro";
 const allWork = await getCollection("workExperiences");
 
 const sortedWork = allWork.sort(
-  (a, b) => date(b.data.dateStart).valueOf() - date(a.data.dateStart).valueOf()
+  (a, b) => date(b.data.dateStart).valueOf() - date(a.data.dateStart).valueOf(),
 );
 
 const groupedByOrg = sortedWork.reduce(
@@ -18,19 +18,19 @@ const groupedByOrg = sortedWork.reduce(
     acc[orgId].push(exp);
     return acc;
   },
-  {} as Record<string, typeof allWork>
+  {} as Record<string, typeof allWork>,
 );
 ---
 
-<section class="p-8 print:py-4 border-b-zinc-100 border-b">
+<section class="border-b border-b-zinc-100 px-8 py-4">
   <h2
-    class="font-mono decoration-1 underline underline-offset-8 decoration-dashed font-black decoration-zinc-200 text-lg mb-3"
+    class="mb-3 font-mono text-lg font-black underline decoration-zinc-200 decoration-dashed decoration-1 underline-offset-8"
   >
     Work Experience
   </h2>
   {
     Object.entries(groupedByOrg).map(async ([orgId, roles]) => (
-      <section class="grid md:grid-cols-[15ch_auto] auto-rows-auto gap-x-[2ch]">
+      <section class="grid auto-rows-auto gap-x-[4ch] md:grid-cols-[15ch_auto] print:grid-cols-[15ch_auto]">
         <Org id={orgId} />
 
         {roles.map((role) => (

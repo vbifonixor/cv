@@ -6,28 +6,28 @@ const location = getSecret("LOCATION");
 ---
 
 <div
-  class="p-8 print:py-4 print:pt-4 pt-16 border-b border-b-zinc-100 grid grid-cols-[1.25fr_auto] gap-4 sm:gap-8"
+  class="grid grid-cols-[1.25fr_auto] gap-4 border-b border-b-zinc-100 p-8 pt-16 sm:gap-8 print:py-4 print:pt-4"
 >
   <div class="flex flex-col">
     <h1
-      class="text-xl font-black font-mono leading-normal decoration-1 underline decoration-dashed underline-offset-4 decoration-amber-400"
+      class="font-mono text-xl leading-normal font-black underline decoration-amber-400 decoration-dashed decoration-1 underline-offset-4"
     >
       Mikhail Kononenko
     </h1>
-    <h2 class="text-l font-semibold leading-normal">
+    <h2 class="text-l leading-normal font-semibold">
       Senior Frontend Developer
     </h2>
-    <div class="flex gap-[1ch] items-center-safe text-sm mt-1 text-zinc-500">
+    <div class="mt-1 flex items-center-safe gap-[1ch] text-sm text-zinc-500">
       <MapPinHouseIcon size={12} />
       {location}
     </div>
   </div>
   <div
-    class="print:hidden flex justify-self-end justify-items-end align-items-center md:text-base text-[0px]"
+    class="align-items-center flex justify-items-end justify-self-end text-[0px] md:text-base print:hidden print:text-base"
   >
     <button
       onclick="window.print()"
-      class="flex gap-[1ch] self-center items-center text-amber-800 cursor-pointer h-6 px-2 py-1 hover:text-amber-700 transition-colors"
+      class="flex h-6 cursor-pointer items-center gap-[1ch] self-center px-2 py-1 text-amber-800 transition-colors hover:text-amber-700"
       ><PrinterIcon size={16} />Print or Save as PDF</button
     >
   </div>

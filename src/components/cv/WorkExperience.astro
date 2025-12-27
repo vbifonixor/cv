@@ -19,46 +19,46 @@ if (!entry || !EntryContent) {
 
 const { rangeStr, durationStr } = formatDateRange(
   entry.data.dateStart,
-  entry.data.dateEnd
+  entry.data.dateEnd,
 );
 ---
 
 <article
-  class="grid md:grid-cols-subgrid md:col-span-2 grid-cols-subgrid col-span-full"
+  class="col-span-full grid grid-cols-subgrid md:col-span-2 md:grid-cols-subgrid print:col-span-2 print:grid-cols-subgrid"
 >
   <div
-    class="place-self-start text-xs flex row-start-2 md:row-auto md:border-b-0 border-b border-zinc-200 border-dashed items-start justify-start h-full gap-[2ch]"
+    class="row-start-2 flex h-full items-start justify-start gap-[2ch] place-self-start text-xs md:row-auto print:row-auto"
   >
-    <div class="border-l-2 border-zinc-100 h-full hidden md:block">
+    <div class="hidden h-full border-l-2 border-zinc-100 md:block print:block">
       <div
-        class="w-2.5 h-2.5 rounded-full bg-amber-900/45 ml-[calc(--spacing(-1.25))] mt-3.5"
+        class="mt-3.5 ml-[calc(--spacing(-1.25))] h-2.5 w-2.5 rounded-full bg-amber-900/45"
       >
       </div>
     </div>
-    <div class="flex flex-col gap-[1ch] pt-3 h-full">
-      <div class="flex gap-[1ch] items-start justify-items-stretch">
+    <div class="flex h-full flex-col gap-[1ch] pt-3">
+      <div class="flex items-start justify-items-stretch gap-[1ch]">
         <span class="text-zinc-400"><CalendarIcon size={12} /></span>
-        <span class="shrink basis-10/12 flex flex-col"
+        <span class="flex shrink basis-10/12 flex-col"
           ><span>{rangeStr}</span><span class="text-zinc-400"
             >{durationStr}</span
           ></span
         >
       </div>
-      <div class="flex gap-[1ch] items-start justify-items-stretch">
+      <div class="flex items-start justify-items-stretch gap-[1ch]">
         <span class="text-zinc-400"><MapPinIcon size={12} /></span>
-        <span class="shrink basis-10/12 flex flex-col">
+        <span class="flex shrink basis-10/12 flex-col">
           {entry.data.location}
         </span>
       </div>
       <div
-        class="flex gap-[1ch] items-start justify-items-stretch mt-auto mb-5"
+        class="mt-auto mb-5 flex items-start justify-items-stretch gap-[1ch]"
       >
         {
           entry.data.stack ? (
             <ul class="inline leading-4 text-zinc-300">
               {entry.data.stack.map((item) => (
                 <>
-                  <li class="inline-flex font-mono px-1 text-[0.6rem] py-0.5">
+                  <li class="inline-flex px-1 py-0.5 font-mono text-[0.6rem]">
                     {item}
                   </li>
                 </>
@@ -71,10 +71,10 @@ const { rangeStr, durationStr } = formatDateRange(
   </div>
   <div class="py-3">
     <h1
-      class="inline-flex gap-[1ch] text-base font-mono font-black items-center-safe"
+      class="inline-flex items-center-safe gap-[1ch] font-mono text-base font-black"
     >
       <span
-        class="decoration-1 underline underline-offset-4 decoration-zinc-200 decoration-dashed text-amber-900"
+        class="text-amber-900 underline decoration-zinc-200 decoration-dashed decoration-1 underline-offset-4"
         >{entry.data.name}</span
       >
       <span class="border-l-2 border-zinc-200 pl-[1ch] font-normal decoration-0"

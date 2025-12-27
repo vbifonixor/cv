@@ -14,17 +14,17 @@ import Languages from "@/components/cv/Languages.astro";
   <CVLayout>
     <Header />
     <div
-      class="grid md:grid-cols-[1.25fr_auto] print:grid-cols-[1.25fr_auto] sm:auto-rows-auto p-8 print:py-4 border-b border-b-zinc-100 gap-4 sm:gap-8"
+      class="grid gap-0 sm:auto-rows-auto md:grid-cols-[1.25fr_auto] md:gap-4 print:grid-cols-[1.25fr_auto]"
     >
       <Bio />
       <Contacts />
     </div>
     <Timeline />
     <div
-      class="grid md:grid-cols-[0.9fr_1.1fr] print:grid-cols-[0.9fr_1.1fr] sm:auto-rows-auto p-8 border-b border-b-zinc-100 gap-4 sm:gap-8"
+      class="grid gap-0 sm:auto-rows-auto md:grid-cols-[0.9fr_1.1fr] md:gap-4 print:grid-cols-[0.9fr_1.1fr]"
     >
       <Skills />
-      <div class="flex flex-col gap-6">
+      <div class="flex flex-col">
         <Education />
         <Languages />
       </div>

@@ -17,8 +17,10 @@ const githubTag = getSecret("GITHUB");
 const telegramTag = getSecret("TELEGRAM");
 ---
 
-<section class="border-b-zinc-100 leading-loose prose prose-zinc">
-  <h2>Contacts</h2>
+<section
+  class="prose prose-zinc border-b border-b-zinc-100 px-8 py-4 leading-loose"
+>
+  <h2 class="mt-0">Contacts</h2>
   <ul class="not-prose leading-loose">
     {
       phone ? (
