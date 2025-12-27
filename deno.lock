@@ -1,21 +1,21 @@
 {
   "version": "5",
   "specifiers": {
-    "npm:@astrojs/check@~0.9.6": "0.9.6_typescript@5.9.3_prettier@3.7.4_prettier-plugin-astro@0.14.1",
-    "npm:@astrojs/mdx@^4.3.13": "4.3.13_astro@5.16.6__typescript@5.9.3__vite@6.4.1___picomatch@4.0.3__zod@3.25.76_typescript@5.9.3",
-    "npm:@fontsource-variable/ibm-plex-sans@^5.2.8": "5.2.8",
-    "npm:@fontsource-variable/jetbrains-mono@^5.2.8": "5.2.8",
-    "npm:@lucide/astro@0.562": "0.562.0_astro@5.16.6__typescript@5.9.3__vite@6.4.1___picomatch@4.0.3__zod@3.25.76_typescript@5.9.3",
-    "npm:@tailwindcss/typography@~0.5.19": "0.5.19_tailwindcss@4.1.18",
-    "npm:@tailwindcss/vite@^4.1.18": "4.1.18_vite@6.4.1__picomatch@4.0.3",
-    "npm:astro@^5.16.6": "5.16.6_typescript@5.9.3_vite@6.4.1__picomatch@4.0.3_zod@3.25.76",
-    "npm:dayjs@^1.11.19": "1.11.19",
-    "npm:paper-css@~0.4.1": "0.4.1",
-    "npm:prettier-plugin-astro@~0.14.1": "0.14.1",
-    "npm:prettier-plugin-tailwindcss@~0.7.2": "0.7.2_prettier@3.7.4_prettier-plugin-astro@0.14.1",
-    "npm:prettier@^3.7.4": "3.7.4",
-    "npm:tailwindcss@^4.1.18": "4.1.18",
-    "npm:typescript@^5.9.3": "5.9.3"
+    "npm:@astrojs/check@0.9.6": "0.9.6_typescript@5.9.3_prettier@3.7.4_prettier-plugin-astro@0.14.1",
+    "npm:@astrojs/mdx@4.3.13": "4.3.13_astro@5.16.6__typescript@5.9.3__vite@6.4.1___picomatch@4.0.3__zod@3.25.76_typescript@5.9.3",
+    "npm:@fontsource-variable/ibm-plex-sans@5.2.8": "5.2.8",
+    "npm:@fontsource-variable/jetbrains-mono@5.2.8": "5.2.8",
+    "npm:@lucide/astro@0.562.0": "0.562.0_astro@5.16.6__typescript@5.9.3__vite@6.4.1___picomatch@4.0.3__zod@3.25.76_typescript@5.9.3",
+    "npm:@tailwindcss/typography@0.5.19": "0.5.19_tailwindcss@4.1.18",
+    "npm:@tailwindcss/vite@4.1.18": "4.1.18_vite@6.4.1__picomatch@4.0.3",
+    "npm:astro@5.16.6": "5.16.6_typescript@5.9.3_vite@6.4.1__picomatch@4.0.3_zod@3.25.76",
+    "npm:dayjs@1.11.19": "1.11.19",
+    "npm:paper-css@0.4.1": "0.4.1",
+    "npm:prettier-plugin-astro@0.14.1": "0.14.1",
+    "npm:prettier-plugin-tailwindcss@0.7.2": "0.7.2_prettier@3.7.4_prettier-plugin-astro@0.14.1",
+    "npm:prettier@3.7.4": "3.7.4",
+    "npm:tailwindcss@4.1.18": "4.1.18",
+    "npm:typescript@5.9.3": "5.9.3"
   },
   "npm": {
     "@astrojs/check@0.9.6_typescript@5.9.3_prettier@3.7.4_prettier-plugin-astro@0.14.1": {
@@ -3510,21 +3510,21 @@
   "workspace": {
     "packageJson": {
       "dependencies": [
-        "npm:@astrojs/check@~0.9.6",
-        "npm:@astrojs/mdx@^4.3.13",
-        "npm:@fontsource-variable/ibm-plex-sans@^5.2.8",
-        "npm:@fontsource-variable/jetbrains-mono@^5.2.8",
-        "npm:@lucide/astro@0.562",
-        "npm:@tailwindcss/typography@~0.5.19",
-        "npm:@tailwindcss/vite@^4.1.18",
-        "npm:astro@^5.16.6",
-        "npm:dayjs@^1.11.19",
-        "npm:paper-css@~0.4.1",
-        "npm:prettier-plugin-astro@~0.14.1",
-        "npm:prettier-plugin-tailwindcss@~0.7.2",
-        "npm:prettier@^3.7.4",
-        "npm:tailwindcss@^4.1.18",
-        "npm:typescript@^5.9.3"
+        "npm:@astrojs/check@0.9.6",
+        "npm:@astrojs/mdx@4.3.13",
+        "npm:@fontsource-variable/ibm-plex-sans@5.2.8",
+        "npm:@fontsource-variable/jetbrains-mono@5.2.8",
+        "npm:@lucide/astro@0.562.0",
+        "npm:@tailwindcss/typography@0.5.19",
+        "npm:@tailwindcss/vite@4.1.18",
+        "npm:astro@5.16.6",
+        "npm:dayjs@1.11.19",
+        "npm:paper-css@0.4.1",
+        "npm:prettier-plugin-astro@0.14.1",
+        "npm:prettier-plugin-tailwindcss@0.7.2",
+        "npm:prettier@3.7.4",
+        "npm:tailwindcss@4.1.18",
+        "npm:typescript@5.9.3"
       ]
     }
   }

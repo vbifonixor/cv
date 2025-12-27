@@ -1,10 +1,7 @@
-FROM alpine:latest
-WORKDIR /usr/share/site
+FROM caddy:alpine
 
+COPY ./dist /usr/share/caddy
 
-COPY ./dist/ .
+EXPOSE 9999
 
-RUN ["ls"]
-
-# Keep the container alive so volume is available
-CMD ["sh", "-c", "sleep infinity"]
+CMD ["caddy", "file-server", "--listen", ":9999", "--root", "/usr/share/caddy"]
